@@ -1,13 +1,13 @@
-// Mobile Navigation
-function toggleMenu(){
+// Mobile Menu
+function toggleMenu() {
     document.getElementById("navLinks").classList.toggle("active");
 }
 
-// Theme Switch
-function toggleTheme(){
-    const body = document.documentElement;
-    const current = body.getAttribute("data-theme");
-    body.setAttribute("data-theme", current === "light" ? "dark" : "light");
+// Theme Toggle
+function toggleTheme() {
+    const html = document.documentElement;
+    const current = html.getAttribute("data-theme");
+    html.setAttribute("data-theme", current === "light" ? "dark" : "light");
 }
 
 // Product Modal Data
@@ -29,20 +29,21 @@ const productData = {
     }
 };
 
-// Show Modal
-function showProduct(id){
+// Open Modal
+function showProduct(id) {
     const modal = document.getElementById("productModal");
     const data = productData[id];
 
     document.getElementById("modalImg").src = data.img;
     document.getElementById("modalTitle").innerText = data.title;
     document.getElementById("modalPrice").innerText = data.price;
-    document.getElementById("modalBuy").href = "https://wa.me/6281234567890?text=Halo%20saya%20ingin%20membeli%20" + data.title;
+    document.getElementById("modalBuy").href =
+        `https://wa.me/6281234567890?text=Halo, saya ingin membeli: ${data.title}`;
 
     modal.style.display = "flex";
 }
 
 // Close Modal
-function closeModal(){
+function closeModal() {
     document.getElementById("productModal").style.display = "none";
 }
