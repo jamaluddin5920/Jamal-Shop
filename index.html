@@ -1,64 +1,99 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TokoKu</title>
+    <title>CEO Store – Premium Business Shop</title>
+    <meta name="description" content="Website toko premium kelas CEO dengan desain modern, elegan, dan responsif.">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="logo">TokoKu</div>
-        <nav>
-            <a href="#home">Beranda</a>
-            <a href="#produk">Produk</a>
-            <a href="#kontak">Kontak</a>
-        </nav>
-    </header>
+<header class="navbar">
+    <div class="logo">CEO<span>Store</span></div>
 
-    <!-- Banner -->
-    <section class="banner" id="home">
-        <h1>Selamat Datang di TokoKu</h1>
-        <p>Toko online dengan produk terbaik untuk Anda</p>
-        <a href="#produk" class="btn">Lihat Produk</a>
-    </section>
+    <nav class="nav-links" id="navLinks">
+        <a href="#home">Beranda</a>
+        <a href="#produk">Produk</a>
+        <a href="#about">Tentang</a>
+        <a href="#kontak" class="btn-nav">Hubungi</a>
+    </nav>
 
-    <!-- Produk -->
-    <section class="produk-section" id="produk">
-        <h2>Produk Kami</h2>
-        <div class="produk-container">
+    <div class="nav-actions">
+        <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    </div>
+</header>
 
-            <div class="produk-card">
-                <img src="https://via.placeholder.com/250" alt="Produk 1">
-                <h3>Produk 1</h3>
-                <p>Rp 50.000</p>
-                <button>Beli</button>
-            </div>
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1 class="fade-in">Produk Premium untuk Bisnis Modern</h1>
+        <p class="fade-in-delay">
+            Tingkatkan citra dan efisiensi bisnis Anda dengan produk terbaik dalam satu platform elegan.
+        </p>
+        <a href="#produk" class="btn-primary fade-in-delay2">Lihat Produk</a>
+    </div>
+</section>
 
-            <div class="produk-card">
-                <img src="https://via.placeholder.com/250" alt="Produk 2">
-                <h3>Produk 2</h3>
-                <p>Rp 75.000</p>
-                <button>Beli</button>
-            </div>
+<!-- PRODUK SECTION -->
+<section class="produk" id="produk">
+    <h2>Produk Unggulan</h2>
 
-            <div class="produk-card">
-                <img src="https://via.placeholder.com/250" alt="Produk 3">
-                <h3>Produk 3</h3>
-                <p>Rp 100.000</p>
-                <button>Beli</button>
-            </div>
+    <div class="produk-grid">
 
+        <div class="produk-card" onclick="showProduct(1)">
+            <img src="assets/images/p1.jpg">
+            <h3>Produk Premium</h3>
+            <p>Rp 150.000</p>
         </div>
-    </section>
 
-    <!-- Kontak -->
-    <footer id="kontak">
-        <p>Hubungi kami melalui email: <b>tokoku@email.com</b></p>
-        <p>© 2025 TokoKu - All Rights Reserved</p>
-    </footer>
+        <div class="produk-card" onclick="showProduct(2)">
+            <img src="assets/images/p2.jpg">
+            <h3>Produk Bisnis</h3>
+            <p>Rp 250.000</p>
+        </div>
 
+        <div class="produk-card" onclick="showProduct(3)">
+            <img src="assets/images/p3.jpg">
+            <h3>Produk Executive</h3>
+            <p>Rp 300.000</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <h2>Standar Profesional</h2>
+    <p>
+        Kami menghadirkan pengalaman belanja dengan kualitas premium, menggabungkan desain elegan
+        dan performa cepat untuk kebutuhan bisnis Anda.
+    </p>
+</section>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/6281234567890" class="wa-btn" target="_blank">
+    💬
+</a>
+
+<!-- FOOTER -->
+<footer class="footer" id="kontak">
+    <p>© 2025 CEOStore — Premium Business Shop</p>
+    <p>Email: ceostore@company.com</p>
+</footer>
+
+<!-- PRODUCT MODAL -->
+<div class="modal" id="productModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">×</span>
+        <img id="modalImg" alt="">
+        <h2 id="modalTitle"></h2>
+        <p id="modalPrice"></p>
+        <a id="modalBuy" class="btn-primary" target="_blank">Beli via WhatsApp</a>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
